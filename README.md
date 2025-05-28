@@ -2,7 +2,9 @@
 
 ## Sistema de Reservas para un Centro Deportivo
 
-Un centro deportivo ofrece diversas actividades como Natación, Gimnasio, Tenis y Yoga. Actualmente, la gestión de las reservas se realiza de manera manual, lo que genera problemas en el tema de cupos y la dificultad para visualizar las reservas realizadas.
+Un centro recreacional ofrece diversas actividades como "Atletismo", "Futbol Sala", "Tenis", "Natación".
+
+Actualmente, la gestión de las reservas se realiza de manera manual, lo que genera problemas en el tema de cupos y la dificultad para visualizar las reservas realizadas.
 
 Para solucionar estos inconvenientes, se requiere desarrollar un programa en Python que permita hacer lo siguiente:
 
@@ -24,19 +26,24 @@ Para solucionar estos inconvenientes, se requiere desarrollar un programa en Pyt
   * Reservar una actividad.
   * Ver reservas.
   * Salir del sistema.
-  
+
 
 Considerar:
 * Usar funciones en la solución
-* En el archivo donde se desarrollará la solución debe usar las siguientes estructucturas
+* En el archivo donde se desarrollará la solución debe usar las siguientes estructucturas.
 ```
 # Lista de actividades disponibles
-actividades = ["Natación", "Gimnasio", "Tenis", "Yoga"]
+actividades = ["Atletismo", "Futbol Sala", "Tenis", "Natación"]
 
 # Cupos disponibles por actividad
-cupos_disponibles = [13, 15, 14, 12]  # Cupos iniciales para cada actividad
+cupos_disponibles = [10, 20, 5, 8]  # Cupos iniciales para cada actividad
 
-# Relación entre actividades y cupos_disponibles: Natación tiene 13 cupos, Gimnasio tiene 15 cupos, etc.
+# Relación entre actividades y cupos_disponibles:
+
+- Atletismo tiene 10 cupos
+- Fútbol Sala tiene 20
+- Tenis tiene 5 cupos
+- Natación tiene 8
 
 # Lista para almacenar las reservas realizadas
 mis_reservas = []
