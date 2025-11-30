@@ -1,61 +1,72 @@
 # ae-suplementaria-bim2-aa2025
 
-## Sistema de Reservas para un Centro Deportivo
+## Sistema de Inscripción para Talleres Culturales en una Casa de la Juventud
 
-Un centro recreacional ofrece diversas actividades como "Atletismo", "Futbol Sala", "Tenis", "Natación".
+Una Casa de la Juventud ofrece diversos talleres culturales como “Pintura”, “Danza Moderna”, “Teatro” y “Guitarra”.
+Actualmente, la gestión de las inscripciones se realiza de manera manual, lo que provoca errores en el control de cupos y dificulta visualizar las inscripciones realizadas.
 
-Actualmente, la gestión de las reservas se realiza de manera manual, lo que genera problemas en el tema de cupos y la dificultad para visualizar las reservas realizadas.
+Para solucionar estos inconvenientes, se requiere desarrollar un programa en Python que permita:
 
-Para solucionar estos inconvenientes, se requiere desarrollar un programa en Python que permita hacer lo siguiente:
-
-* Registrar a los clientes que desean realizar una reserva.
-* Mostrar la lista de actividades y su disponibilidad de cupos.
-* Validar la disponibilidad de cupos antes de confirmar la reserva.
-* Almacenar las reservas realizadas y permitir su consulta.
+* Registrar a jóvenes que desean participar en un taller.
+* Mostrar la lista de talleres y su disponibilidad de cupos.
+* Validar la disponibilidad antes de confirmar la inscripción.
+* Guardar todas las inscripciones en una lista y permitir su consulta.
 
 ### Requerimientos
 
-* El usuario ingresará su nombre y apellido.
-* Se mostrará un listado de actividades con la cantidad de cupos disponibles.
-* El usuario deberá seleccionar una actividad para reservar.
-* Si hay cupos disponibles, la reserva será confirmada y el cupo del actividad se actualizará.
-* Si no hay cupos disponibles, se debe indicar al usuario
-* Se debe permitir visualizar la lista de reservas registradas
-* Usar de forma obligatoria las estructuras dadas en los siguientes apartados. Debe comentar con sus palabras la razón de uso y funcionamiento de la función obtener_nombre
-* Debe crearse un menú:
-  * Reservar una actividad.
-  * Ver reservas.
-  * Salir del sistema.
+* El usuario ingresará nombre y apellido del participante.
+* Se mostrará un listado de talleres con la cantidad de cupos disponibles.
+* El usuario seleccionará un taller para inscribirse.
+* Si hay cupos disponibles, la inscripción será confirmada y el cupo del taller se actualizará.
+* Si no hay cupos, se deberá informar al usuario.
+* El sistema debe permitir visualizar todas las inscripciones realizadas.
+* Se debe usar de forma obligatoria las estructuras definidas en los apartados siguientes.
+* Se debe comentar con sus palabras la razón de uso y funcionamiento de la función obtener_nombre.
+* El sistema debe incluir un menú con:
+    * Inscribirse en un taller
+    * Ver inscripciones
+    * Salir del sistema
 
-
-Considerar:
+### Considerar:
 * Usar funciones en la solución
-* En el archivo donde se desarrollará la solución debe usar las siguientes estructucturas.
+* En el archivo donde se desarrollará la solución debe usar las siguientes estructucturas, de forma obligatoria.
+
 ```
-# Lista de actividades disponibles
-actividades = ["Atletismo", "Futbol Sala", "Tenis", "Natación"]
 
-# Cupos disponibles por actividad
-cupos_disponibles = [10, 20, 5, 8]  # Cupos iniciales para cada actividad
+# Lista de talleres disponibles
+talleres = ["Pintura", "Danza Moderna", "Teatro", "Guitarra"]
 
-# Relación entre actividades y cupos_disponibles:
+# Cupos disponibles por taller
+cupos = [12, 15, 8, 10]   # Cupos iniciales para cada taller
 
-- Atletismo tiene 10 cupos
-- Fútbol Sala tiene 20
-- Tenis tiene 5 cupos
-- Natación tiene 8
+# Relación entre talleres y cupos:
+# - Pintura tiene 12 cupos
+# - Danza Moderna tiene 15 cupos
+# - Teatro tiene 8 cupos
+# - Guitarra tiene 10 cupos
 
-# Lista para almacenar las reservas realizadas
-mis_reservas = []
+# Lista para almacenar inscripciones
+inscripciones = []
 
-# Usar la siguiente función de forma obligatoria
 
-# Función
+# Función obligatoria
 def obtener_nombre():
     nombre = input("Ingrese nombre: ").strip()
-    if nombre:  
+    if nombre:
         return nombre
-    print("El valor para nombre no puede estar vacío.")
-    return obtener_nombre()  
+    else:
+        print("El nombre no puede estar vacío.")
+        return obtener_nombre()
 
 ```
+
+### Flujo de datos esperado
+1. El usuario ingresa su nombre (validado por obtener_nombre) y apellido.
+2. Se muestran los talleres con sus cupos disponibles.
+3. El usuario selecciona un taller.
+4. Se valida si existen cupos:
+    5. Si hay cupos → Se registra la inscripción y se descuenta un cupo.
+    6. Si no hay cupos → Se muestra un mensaje de error.
+7. La inscripción se almacena en la lista inscripciones como un diccionario o lista interna.
+8. El usuario puede visualizar todas las inscripciones registradas.
+9. El programa continúa hasta que el usuario elija salir.
